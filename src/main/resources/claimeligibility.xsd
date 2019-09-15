@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.accenture.com/VCS/ClaimEligibility"
+	xmlns:tns=      "http://www.accenture.com/VCS/ClaimEligibility"
+	elementFormDefault="qualified">
+
+    
+    <xsd:complexType name="serviceStatus">
+        <xsd:sequence>
+            <xsd:element name="statusCode" type="xsd:string" />
+            <xsd:element name="message" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType> 
+
+
+
+	<xsd:element name="addClaimRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+			<xsd:element name="claimId" type="xsd:integer" />
+			<xsd:element name="dateOfloss" type="xsd:string" />
+			<xsd:element name="timeOfloss" type="xsd:string" />
+			<xsd:element name="losslocationAddress" type="xsd:string" />
+			<xsd:element name="pincode" type="xsd:string" />
+			<xsd:element name="lossLocationStateCode" type="xsd:string" />
+			<xsd:element name="injuryDetail" type="xsd:string" />
+			<xsd:element name="policyNumber" type="xsd:integer" />
+			<xsd:element name="descriptionOfLos" type="xsd:string" />
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	
+	<xsd:element name="addClaimResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+			    <xsd:element name="serviceStatus" type="tns:serviceStatus"/>            
+               
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	
+	
+	
+
+	
+</xsd:schema>
